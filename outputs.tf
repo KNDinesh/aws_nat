@@ -5,7 +5,7 @@ output "nat_gateway_id" {
 
 output "nat_gateway_eip" {
   description = "The Elastic IP associated with the NAT Gateway"
-  value       = aws_eip.nat_gateway_eip.id
+  value       = aws_eip.nat_eip.id
 }
 
 output "public_subnet_id" {
