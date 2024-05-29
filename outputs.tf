@@ -8,3 +8,8 @@ output "nat_gateway_eip" {
   description = "The Elastic IP associated with the NAT Gateway"
   value       = aws_eip.nat_eip.id
 }
+
+# output "subnet_id" {
+#   description = "List of subnet IDs"
+#   value       = module.subnets.subnet_id
+# }
