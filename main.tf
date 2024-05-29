@@ -9,11 +9,11 @@ resource "aws_eip" "nat_eip" {
 
 resource "aws_nat_gateway" "nat_gateway" {
   depends_on = [
-    var.public_subnet_id,
-    aws_eip.nat_eip
+    aws_eip.nat_eip,
   ]
+  
   allocation_id = aws_eip.nat_eip.id
-  subnet_id     = var.public_subnet_id
+  subnet_id     = module.subnets.subnet_ids
 
   tags = {
     Name = "${var.project_name}-nat-gateway"
